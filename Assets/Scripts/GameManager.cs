@@ -9,8 +9,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]float gameTime;
 
-    /*public bool bigSize;
-    public bool superBall;*/
+    public bool bigSize;//Movemos el bigSize al GameManager para tener registro sobre el
+    public bool superBall;
 
     [SerializeField] byte bricksOnLevel;//Va a llevar registros sobre los bloques, eliminamos public ya que no afectara a la variable desde otro script   
   

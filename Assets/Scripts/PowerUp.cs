@@ -1,4 +1,4 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,4 +20,4 @@ public class PowerUp : MonoBehaviour
     {
         transform.position += speed * Time.deltaTime * Vector3.down;//Agregamos un movimiento hacia abajo 
     }
-}*/
+}
