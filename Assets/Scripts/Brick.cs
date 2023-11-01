@@ -6,6 +6,7 @@ public class Brick : MonoBehaviour
 {
     //GameObject gameManagerObj;
     GameManager gameManager;
+    [SerializeField] GameObject explosionPrefab;//Para la animacion de la explosion
     //[SerializeField] GameObject[] powerUpPrefabs;
     
 
@@ -20,6 +21,7 @@ public class Brick : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);//Crear la animacion de la explosion con cada bloque destruido
         if (gameManager != null)//Comprobar que exista, en caso que si restara a BricksOnLevel
         {
             gameManager.BricksOnLevel--;//comentario linea 30
