@@ -7,11 +7,11 @@ public class Paddle : MonoBehaviour
 {
     [SerializeField] float speed = 9f;
     GameManager gameManager;//Obtener referencia al GameManager
-    [SerializeField] float xLimit = 7.5f;//Limites que el paddle puede manejar
+    [SerializeField] float xLimit = 7.29f;//Limites que el paddle puede manejar
     [SerializeField] float xLimitWhenBig = 6f;
-    [SerializeField] byte superBallTime = 10;
+    
     [SerializeField] byte timeBigSize = 10;//Para modificar el tiempo en la ventana inspector
-    [SerializeField] byte timeSuperBall = 10;//Para modificar el tiempo en la ventana inspector
+    
     
     
 
@@ -60,13 +60,9 @@ public class Paddle : MonoBehaviour
             {
 
                 gameManager.bigSize = true;
-                Debug.Log("Obtuvo un power up de: "+gameManager.bigSize);//Verificacion
+                Debug.Log("Obtuvo un power up de: " + gameManager.bigSize);//Verificacion
                 StartCoroutine(BigSizePower());//Llamamos a la corrutina justo en el momento que se detecte
             
-            }else if (collision.GetComponent<PowerUp>().powerUpType == PowerUp.PowerUpType.SuperBall)//Para detectar si colisiono con un power up de tipo superball
-            {
-                gameManager.superBall = true;
-                Debug.Log("Obtuvo un power up de: " + gameManager.superBall);//Verificacion
             }
             Destroy(collision.gameObject);   
         }
@@ -77,14 +73,14 @@ public class Paddle : MonoBehaviour
         xLimit = xLimitWhenBig;//Indicamos que el nuevo limit sera el valor de xLimitWhenBig
         //Incrementar de tamaño
         Vector3 newSize = transform.localScale;//Un vector3 que almacena el tamaño actual del paddle
-        while (transform.localScale.x < 1.5f)//Un while que toma el eje X del newSize y lo incrementa mientras el valor sea menor a 1.5
+        while (transform.localScale.x < 5.5f)//Un while que toma el eje X del newSize y lo incrementa mientras el valor sea menor a 1.5
         {
             newSize.x += Time.deltaTime;//Utilizamos un deltaTime para que su animación sea fluida en el incremento
             transform.localScale = newSize;//Luego asignamos el valor actualizado a la scala del paddle
         }   
         yield return new WaitForSeconds(timeBigSize);
         //Reducir a su tamaño original
-        while (transform.localScale.x > 1)
+        while (transform.localScale.x > 3)
         {
             newSize.x -= Time.deltaTime;
             transform.localScale = newSize;
@@ -92,9 +88,5 @@ public class Paddle : MonoBehaviour
         gameManager.bigSize = false;//Indicamos que el paddle ya no tiene el power up
         xLimit = originalXLimit;//Una vez terminado los efectos del power Up este volvera a su tamanio original
     }
-    IEnumerator StopSuperBall()
-    {
-        yield return new WaitForSeconds(timeSuperBall);
-        gameManager.superBall = false;
-    }
+    
 }

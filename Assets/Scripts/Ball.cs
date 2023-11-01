@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour
     Vector2 currentVelocity;
     [SerializeField] float speed = 3f;
     GameManager gameManager;//Acceso al gameManager desde el script
+    
 
     /*Sonidos*/
     [SerializeField] AudioClip paddleBounce;
@@ -33,12 +34,8 @@ public class Ball : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Verificamos que la colision sea los bloques (Brick) y que superBall que esta en gameManager sea verdadero
-        if (collision.transform.CompareTag("Brick") && gameManager.superBall == true)//
-        {
-            rigidBody2D.velocity = currentVelocity;//Asignamos la velocidad actual al componente RigidBody2D
-            return;//Le asignamos este return para evitar todo el codigo debajo de la linea y se encarga de generar un rebote ya no sea ejecutado
-        }
+        
+        
 
 
         Debug.Log("La bola colisiono con: " + collision.transform.name);//collision.transform.name <- Nos permite saber con que objeto colisiono la bola
@@ -80,4 +77,5 @@ public class Ball : MonoBehaviour
         transform.position = ballPosition;//Le asignamos la posición que hicimos en la ballPosition a la bola
         gameManager.BallOnPlay = false;//Le decimo al GameManager que la bola no esta en el juego para para que permita hacer otro lanzamiento
     }
+    
 }
