@@ -2425,9 +2425,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 11
-  xLimit: 7.28
+  xLimit: 7.29
   xLimitWhenBig: 6
-  superBallTime: 10
+  timeBigSize: 10
 --- !u!212 &386632900
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2489,7 +2489,7 @@ Transform:
   m_GameObject: {fileID: 386632898}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: -3.72, z: 0}
+  m_LocalPosition: {x: 7.29, y: -3.72, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3079,6 +3079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameTime: 0
+  bigSize: 0
   bricksOnLevel: 0
   playerLives: 3
   gameStarted: 0
@@ -12871,15 +12872,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4888782043991844224, guid: da89c5ffb9b48674aad894b99040c350, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9146535098767170619, guid: da89c5ffb9b48674aad894b99040c350, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.27
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 9146535098767170619, guid: da89c5ffb9b48674aad894b99040c350, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.51
+      value: -7.23
       objectReference: {fileID: 0}
     - target: {fileID: 9146535098767170619, guid: da89c5ffb9b48674aad894b99040c350, type: 3}
       propertyPath: m_LocalPosition.z
