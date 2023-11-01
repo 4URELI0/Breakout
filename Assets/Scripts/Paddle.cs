@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +7,12 @@ public class Paddle : MonoBehaviour
 {
     [SerializeField] float speed = 9f;
     GameManager gameManager;//Obtener referencia al GameManager
-    [SerializeField] float xLimit = 7.28f;//Limites que el paddle puede manejar
+    [SerializeField] float xLimit = 7.5f;//Limites que el paddle puede manejar
     [SerializeField] float xLimitWhenBig = 6f;
     [SerializeField] byte superBallTime = 10;
+    [SerializeField] byte timeBigSize = 10;//Para modificar el tiempo en la ventana inspector
+    [SerializeField] byte timeSuperBall = 10;//Para modificar el tiempo en la ventana inspector
+    
     
 
     private void Start()
@@ -44,49 +48,53 @@ public class Paddle : MonoBehaviour
             }
         }
     }
-    /*private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("PowerUp"))
         {
-            //Obtenemos el componente PowerUp pero con el objeto de colisión por la información que este contiene
-            //Obtenemos su variable powerUpType
+            //Obtenemos el componente PowerUp pero con el objeto de colisión por la información que este contiene con el paddle
+            //Obtenemos su variable powerUpType y verificamos si corresponde al 
+            //Accedemos a la clase (PowerUp) y luego el nombre del enum (PowerUpType)
+            //Indicamos que el paddle tiene un power up
             if (collision.GetComponent<PowerUp>().powerUpType == PowerUp.PowerUpType.IncreaseSize)
             {
+
                 gameManager.bigSize = true;
-                StartCoroutine(BigSizePower());
-            }
-            else if(collision.GetComponent<PowerUp>().powerUpType == PowerUp.PowerUpType.SuperBall)
+                Debug.Log("Obtuvo un power up de: "+gameManager.bigSize);//Verificacion
+                StartCoroutine(BigSizePower());//Llamamos a la corrutina justo en el momento que se detecte
+            
+            }else if (collision.GetComponent<PowerUp>().powerUpType == PowerUp.PowerUpType.SuperBall)//Para detectar si colisiono con un power up de tipo superball
             {
                 gameManager.superBall = true;
-                StartCoroutine(StopSuperBall());
+                Debug.Log("Obtuvo un power up de: " + gameManager.superBall);//Verificacion
             }
             Destroy(collision.gameObject);   
         }
-    }*/
-    /*IEnumerator BigSizePower()//Esta corrutina se encargara de incrementar el tamaño del paddle por 5 segundos y después el paddle volverá a la normalidad 
+    }
+   IEnumerator BigSizePower()
     {
-        float originalXLimit = xLimit;//Guardar el limite original 
-        xLimit = xLimitWhenBig;//Indicamos que el nuevo limite sera el valor que tenemos en xLimitWhenBig
-        Vector3 newSize = transform.localScale;//Almacena el tamaño actual del paddle
-        //Incrementar tamaño
-        while (transform.localScale.x < 1.5f)//Tenemos un while que toma la x de newSize y lo aumenta un poco en cada frame
+        float originalXLimit = xLimit;//Guardamos el limite original en una variable local
+        xLimit = xLimitWhenBig;//Indicamos que el nuevo limit sera el valor de xLimitWhenBig
+        //Incrementar de tamaño
+        Vector3 newSize = transform.localScale;//Un vector3 que almacena el tamaño actual del paddle
+        while (transform.localScale.x < 1.5f)//Un while que toma el eje X del newSize y lo incrementa mientras el valor sea menor a 1.5
         {
-            newSize.x += Time.deltaTime;
-            transform.localScale = newSize;//El valor actualizado se le asigna a la escala del paddle
-        }
-        yield return new WaitForSeconds(10);
-        //Reducir tamaño 
+            newSize.x += Time.deltaTime;//Utilizamos un deltaTime para que su animación sea fluida en el incremento
+            transform.localScale = newSize;//Luego asignamos el valor actualizado a la scala del paddle
+        }   
+        yield return new WaitForSeconds(timeBigSize);
+        //Reducir a su tamaño original
         while (transform.localScale.x > 1)
         {
             newSize.x -= Time.deltaTime;
             transform.localScale = newSize;
         }
-        gameManager.bigSize = false;//Le asignamos un false para decir que el Paddle ya no posee el powerUp
-        xLimit = originalXLimit;//Al regresar el paddle al tamaño original también regresamos al limite original
+        gameManager.bigSize = false;//Indicamos que el paddle ya no tiene el power up
+        xLimit = originalXLimit;//Una vez terminado los efectos del power Up este volvera a su tamanio original
     }
     IEnumerator StopSuperBall()
     {
-        yield return new WaitForSeconds(superBallTime);
+        yield return new WaitForSeconds(timeSuperBall);
         gameManager.superBall = false;
-    }*/
+    }
 }

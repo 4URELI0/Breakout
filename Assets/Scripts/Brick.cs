@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Brick : MonoBehaviour
 {
     //GameObject gameManagerObj;
     GameManager gameManager;
     [SerializeField] GameObject explosionPrefab;//Para la animacion de la explosion
-    //[SerializeField] GameObject[] powerUpPrefabs;
+    [SerializeField] GameObject[] powerUpPrefabs;//Guardar los power up en el script
     
 
     private void Start()
@@ -26,21 +27,19 @@ public class Brick : MonoBehaviour
         {
             gameManager.BricksOnLevel--;//comentario linea 30
         }
-        /*if (gameManager.bigSize == false && gameManager.superBall == false)
+        if (gameManager.bigSize == false && gameManager.superBall == false) 
         {
+            //Numeros aleatorio
+            int numeroRandom = Random.Range(0, 100);
+            if (numeroRandom < 30)//Es como tener un 30% de probabilidad que aparesca un power up
+            {
+                /*Crear un powerUp al destruir un bloque*/
+                int powerUpRandom = Random.Range(0, powerUpPrefabs.Length);
+                Instantiate(powerUpPrefabs[powerUpRandom], transform.position, Quaternion.identity);
 
-
-         //Numero aleatorio entre el 0 - 99
-         int numeroRandom = Random.Range(0, 100);
-         if (numeroRandom < 50)//Hay un 50% que de posibilidad que aparezca un powerUp
-         {
-                //Crear un power Up
-                int randomPowerUp = Random.Range(0, powerUpPrefabs.Length);//Le pasamos la longitud del arreglo como numero mas grande posible 
-                Instantiate(powerUpPrefabs[randomPowerUp], transform.position, Quaternion.identity);
-         }
-        }*/
+            }
+            
+        }
         Destroy(gameObject);
-        
-
     }
 }

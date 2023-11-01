@@ -33,11 +33,12 @@ public class Ball : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        /*if (collision.transform.CompareTag("Brick") && gameManager.superBall == true)
+        //Verificamos que la colision sea los bloques (Brick) y que superBall que esta en gameManager sea verdadero
+        if (collision.transform.CompareTag("Brick") && gameManager.superBall == true)//
         {
-            rigidBody2D.velocity = currentVelocity;
-            return;
-        }*/
+            rigidBody2D.velocity = currentVelocity;//Asignamos la velocidad actual al componente RigidBody2D
+            return;//Le asignamos este return para evitar todo el codigo debajo de la linea y se encarga de generar un rebote ya no sea ejecutado
+        }
 
 
         Debug.Log("La bola colisiono con: " + collision.transform.name);//collision.transform.name <- Nos permite saber con que objeto colisiono la bola
