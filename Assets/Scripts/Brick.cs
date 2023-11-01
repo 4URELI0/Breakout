@@ -27,7 +27,7 @@ public class Brick : MonoBehaviour
         {
             gameManager.BricksOnLevel--;//comentario linea 30
         }
-        if (gameManager.bigSize == false && gameManager.superBall == false) 
+        if (gameManager.bigSize == false) 
         {
             //Numeros aleatorio
             int numeroRandom = Random.Range(0, 100);

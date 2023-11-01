@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerUpincreaseSize
       objectReference: {fileID: 0}
+    - target: {fileID: 6052969213075965335, guid: e800d6c980496084aa26539c2d1d969f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7581531822645656620, guid: e800d6c980496084aa26539c2d1d969f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.48

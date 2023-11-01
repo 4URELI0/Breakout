@@ -7,8 +7,7 @@ public class PowerUp : MonoBehaviour
     [SerializeField] float speed = 5f;
     public enum PowerUpType
     {
-     IncreaseSize,//Aumenta el tamaño del paddle
-     SuperBall
+     IncreaseSize//Aumenta el tamaño del paddle
     }
     public PowerUpType powerUpType;//Actuara como selector del tipo de power-up desde la ventana inspector
 
