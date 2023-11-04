@@ -27,11 +27,11 @@ public class Brick : MonoBehaviour
         {
             gameManager.BricksOnLevel--;//comentario linea 30
         }
-        if (gameManager.bigSize == false) 
+        if (gameManager.bigSize == false && gameManager.bigSpeed == false) 
         {
             //Numeros aleatorio
             int numeroRandom = Random.Range(0, 100);
-            if (numeroRandom < 30)//Es como tener un 30% de probabilidad que aparesca un power up
+            if (numeroRandom < 40)//Es como tener un 40% de probabilidad que aparesca un power up
             {
                 /*Crear un powerUp al destruir un bloque*/
                 int powerUpRandom = Random.Range(0, powerUpPrefabs.Length);
