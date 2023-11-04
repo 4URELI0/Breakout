@@ -8,7 +8,8 @@ public class PowerUp : MonoBehaviour
     
     public enum PowerUpType
     {
-     IncreaseSize//Aumenta el tamaño del paddle
+     IncreaseSize,//Aumenta el tamaño del paddle
+     IncreaseSpeed//Aumenta la velocidad del paddle
     }
     public PowerUpType powerUpType;//Actuara como selector del tipo de power-up desde la ventana inspector
 
@@ -18,6 +19,6 @@ public class PowerUp : MonoBehaviour
     }
     private void Update()
     {
-        transform.position += speed * Time.deltaTime * Vector3.down;//Agregamos un movimiento hacia abajo 
+        transform.position += speed * Time.deltaTime * Vector3.down;//Agregamos un movimiento hacia abajo para los power ups
     }
 }
