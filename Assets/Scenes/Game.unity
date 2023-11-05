@@ -2427,7 +2427,9 @@ MonoBehaviour:
   speed: 11
   xLimit: 7.29
   xLimitWhenBig: 6
+  speedPU: 14.5
   timeBigSize: 10
+  timeBigSpeed: 10
 --- !u!212 &386632900
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3080,6 +3082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameTime: 0
   bigSize: 0
+  bigSpeed: 0
   bricksOnLevel: 0
   playerLives: 3
   gameStarted: 0
@@ -7319,7 +7322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidBody2D: {fileID: 1207456351}
-  speed: 10
+  speed: 12
   paddleBounce: {fileID: 8300000, guid: 326bdd055ff7db14a9053f8d214f4111, type: 3}
   bounce: {fileID: 8300000, guid: 7ffa0b85ed21e064b80e7aa8794b89b7, type: 3}
   loseLife: {fileID: 8300000, guid: 45e463a3df60bc14da929da422f0190a, type: 3}
@@ -12875,12 +12878,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9146535098767170619, guid: da89c5ffb9b48674aad894b99040c350, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146535098767170619, guid: da89c5ffb9b48674aad894b99040c350, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146535098767170619, guid: da89c5ffb9b48674aad894b99040c350, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 9146535098767170619, guid: da89c5ffb9b48674aad894b99040c350, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.23
+      value: -9.95
       objectReference: {fileID: 0}
     - target: {fileID: 9146535098767170619, guid: da89c5ffb9b48674aad894b99040c350, type: 3}
       propertyPath: m_LocalPosition.z
