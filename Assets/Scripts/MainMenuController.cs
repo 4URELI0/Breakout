@@ -10,4 +10,9 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("Game");
         Debug.Log("Se presiono el boton");
     }
+
+    public void Options()
+    {
+        SceneManager.LoadScene("Options");
+    }
 }
