@@ -11,7 +11,7 @@
 > _Se recomienda tener la version unity 2022.3.5f1 o superior para evitar errores al ejecutar el juego._
 
 ###### OBJETIVO:
-*El objetivo del Breakout es eliminar todos los ladrillos en la parte superior de la pantalla golpeandolos con una pelota y evitar que la pelota caiga fuera de la pantalla *
+El objetivo del Breakout es eliminar todos los ladrillos en la parte superior de la pantalla golpeandolos con una pelota y evitar que la pelota caiga fuera de la pantalla
 
 ###### CONTROLES:
 
