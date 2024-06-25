@@ -1,4 +1,4 @@
-#BREAKOUT
+# BREAKOUT
 ###### Trabajo Practico Evaluativo Proyecto Unity 2D
 - Apellido y nombre: Arraya Quispe Cristian Javier
 - Lu: 000651
@@ -6,13 +6,14 @@
 - Profesor: Ariel Alejandro Vega
 - Profesor de TP: Samuel Bustamante
 - Version de unity:  2022.3.5f1
-###### Advertencia:
-_Se recomienda tener una version unity superior a la 2022.3.5f1. Tener una version anterior podria causar errores en el juego._
+  
+> [!CAUTION]
+> _Se recomienda tener la version unity 2022.3.5f1 o superior para evitar errores al ejecutar el juego._
 
-######Objetivo:
+###### OBJETIVO:
 *El objetivo del Breakout es eliminar todos los ladrillos en la parte superior de la pantalla golpeandolos con una pelota y evitar que la pelota caiga fuera de la pantalla *
 
-######Controles:
+###### CONTROLES:
 
  MOVIMIENTO DEL PADDLE: Se utiliza las teclas dirrecionales, para mover el paddle de izquierda a derecha en la parte inferior de la pantalla.
  LANZAMIENTO DE LA PELOTA: Para iniciar el juego se va a presionar el click derecho del mouse donde la pelota, saldra en un lanzamiento aleatorio.
