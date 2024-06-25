@@ -20,7 +20,7 @@ El objetivo del Breakout es eliminar todos los ladrillos en la parte superior de
  REBOTE DE LA PELOTA: Una vez que la pelota está en movimiento, no controlas directamente su trayectoria. En cambio, la pelota rebota automáticamente en ángulos al golpear los ladrillos y las paredes. Tu objetivo principal es mover la plataforma para asegurarte de que la pelota no caiga fuera de la pantalla y seguir golpeando los ladrillos.
  
 
-######Ventajas (power-up):
+###### Ventajas (power-up):
 
--  Aumentar el tamaño del paddle: Al recoger el power-up con el paddle este hara que el paddle se vuelva mas grande pero por un lapso de tiempo de 10 segundos. Esta ventaja te facilitara golpear la pelota y controlar su direccion, lo que puede ayudarte a eliminar mas bloques con facilidad.
-- Aumento de velocidad del paddle: Esta ventana te otorgara mayor velocidad del paddle permitiendote mayor agilidad y precision para golpear la pelota e facilitara la eliminacion de los bloques pero su lado negativo aumenta dificultad al juego al requerir reflejos mas rapido para evitar que la pelota se pierda.
+ Aumentar el tamaño del paddle: Al recoger el power-up con el paddle este hara que el paddle se vuelva mas grande pero por un lapso de tiempo de 10 segundos. Esta ventaja te facilitara golpear la pelota y controlar su direccion, lo que puede ayudarte a eliminar mas bloques con facilidad.
+ Aumento de velocidad del paddle: Esta ventana te otorgara mayor velocidad del paddle permitiendote mayor agilidad y precision para golpear la pelota e facilitara la eliminacion de los bloques pero su lado negativo aumenta dificultad al juego al requerir reflejos mas rapido para evitar que la pelota se pierda.
