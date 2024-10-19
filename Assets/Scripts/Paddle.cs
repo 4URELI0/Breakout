@@ -14,8 +14,6 @@ public class Paddle : MonoBehaviour
     [SerializeField] byte timeBigSpeed = 10;//Para modificar el tiempo en la ventana inspector la velocidad del power ups
    
     
-    
-
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();

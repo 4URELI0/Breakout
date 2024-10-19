@@ -33,7 +33,6 @@ public class UIController : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
         Debug.Log("Menu");
     }
-
     public void UpdateUILives(byte currentLives)
     {
         for (int i = 0; i < livesImg.Length; i++)

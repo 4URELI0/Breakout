@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class TitleAnimation : MonoBehaviour
 {
-    string fraseTitulo = "BREAKOUT";
-    public Text texto;
+    private string titlePhrase = "BREAKOUT";
+    public Text textBr;
     void Start()
     {
         StartCoroutine(TituloAnim());
     }
     IEnumerator TituloAnim()
     {
-        foreach(char caracter in fraseTitulo)
+        foreach(char caracter in titlePhrase)
         {
-            texto.text = texto.text + caracter;
+            textBr.text = textBr.text + caracter;
             yield return new WaitForSeconds(0.5f);
         }
     }
