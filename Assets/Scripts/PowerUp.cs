@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
-    [SerializeField] float speed = 5f;
-    
+    [SerializeField] float speed = 5f;    
     public enum PowerUpType
     {
      IncreaseSize,//Aumenta el tamaño del paddle

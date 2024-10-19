@@ -10,7 +10,6 @@ public class Ball : MonoBehaviour
     [SerializeField] float speed = 3f;
     GameManager gameManager;//Acceso al gameManager desde el script
     
-
     /*Sonidos*/
     [SerializeField] AudioClip paddleBounce;
     [SerializeField] AudioClip bounce;
@@ -26,18 +25,12 @@ public class Ball : MonoBehaviour
         //Movimiento de la pelota hacia arriba
         gameManager = FindObjectOfType<GameManager>();//Obtenemos el componente  y es único
     }
-
-   
     void FixedUpdate()//Los tiempos delta son constantes
     {
         currentVelocity = rigidBody2D.velocity;   
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-        
-
-
         Debug.Log("La bola colisiono con: " + collision.transform.name);//collision.transform.name <- Nos permite saber con que objeto colisiono la bola
         moveDirection = Vector2.Reflect(currentVelocity, collision.GetContact(0).normal);
         rigidBody2D.velocity = moveDirection;
@@ -77,5 +70,4 @@ public class Ball : MonoBehaviour
         transform.position = ballPosition;//Le asignamos la posición que hicimos en la ballPosition a la bola
         gameManager.BallOnPlay = false;//Le decimo al GameManager que la bola no esta en el juego para para que permita hacer otro lanzamiento
     }
-    
 }

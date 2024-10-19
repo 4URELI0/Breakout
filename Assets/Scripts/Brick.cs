@@ -10,7 +10,6 @@ public class Brick : MonoBehaviour
     [SerializeField] GameObject explosionPrefab;//Para la animacion de la explosion
     [SerializeField] GameObject[] powerUpPrefabs;//Guardar los power up en el script
     
-
     private void Start()
     {
         
@@ -38,7 +37,6 @@ public class Brick : MonoBehaviour
                 Instantiate(powerUpPrefabs[powerUpRandom], transform.position, Quaternion.identity);
 
             }
-            
         }
         Destroy(gameObject);
     }

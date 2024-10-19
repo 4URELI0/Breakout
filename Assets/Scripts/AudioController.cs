@@ -5,11 +5,6 @@ using UnityEngine;
 public class AudioController : MonoBehaviour
 {
     [SerializeField] AudioSource[] sfxChannel;
-
-    private void Start()
-    {
-        StartCoroutine("CleanAudioChannel");
-    }
     public void PlaySfx(AudioClip clip)
     {
         /*Agregamos un look for que recorre todo el arreglo de AudioSource*/
