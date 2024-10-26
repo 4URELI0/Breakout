@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Paddle : MonoBehaviour
@@ -12,17 +10,17 @@ public class Paddle : MonoBehaviour
     [SerializeField] float speedPU = 50.5f;
     [SerializeField] byte timeBigSize = 10;//Para modificar el tiempo en la ventana inspector la velocidad del powerUp
     [SerializeField] byte timeBigSpeed = 10;//Para modificar el tiempo en la ventana inspector la velocidad del power ups
-   
-    
+
+
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
-       
+
     }
 
     void Update()
     {
-        MovimientoJugador();       
+        MovimientoJugador();
     }
     void MovimientoJugador()
     {
@@ -44,7 +42,7 @@ public class Paddle : MonoBehaviour
             }
             if (gameManager.GameStarted == false)//Se ejecutara una vez al inicio del juego
             {
-                gameManager.GameStarted = true;  
+                gameManager.GameStarted = true;
             }
         }
     }
@@ -62,18 +60,19 @@ public class Paddle : MonoBehaviour
                 gameManager.bigSize = true;
                 Debug.Log("Obtuvo un power up de:Aumento de tamaño" + gameManager.bigSize);//Verificacion
                 StartCoroutine(BigSizePower());//Llamamos a la corrutina justo en el momento que se detecte
-            
-            }else if (collision.GetComponent<PowerUp>().powerUpType == PowerUp.PowerUpType.IncreaseSpeed)
+
+            }
+            else if (collision.GetComponent<PowerUp>().powerUpType == PowerUp.PowerUpType.IncreaseSpeed)
             {
                 gameManager.bigSpeed = true;
                 Debug.Log("Obtuvo un power up de:Aumento de velocidad " + gameManager.bigSpeed);
                 StartCoroutine(BigSpeedPower());
             }
-            Destroy(collision.gameObject);   
+            Destroy(collision.gameObject);
         }
     }
-   IEnumerator BigSizePower()
-   {
+    IEnumerator BigSizePower()
+    {
         float originalXLimit = xLimit;//Guardamos el limite original en una variable local
         xLimit = xLimitWhenBig;//Indicamos que el nuevo limit sera el valor de xLimitWhenBig
         //Incrementar de tamaño
@@ -92,8 +91,8 @@ public class Paddle : MonoBehaviour
         }
         gameManager.bigSize = false;//Indicamos que el paddle ya no tiene el power up
         xLimit = originalXLimit;//Una vez terminado los efectos del power Up este volvera a su tamanio original
-   }
-   
+    }
+
     IEnumerator BigSpeedPower()
     {
         //Aumentar la velocidad del paddle
@@ -103,9 +102,8 @@ public class Paddle : MonoBehaviour
         yield return new WaitForSeconds(timeBigSpeed);
         //Disminuir la velocidad del paddle
         speed = originalSpeed;
-        
+
         gameManager.bigSpeed = false;
         Debug.Log("Aumento de velocidad desactivado");
     }
-    
 }

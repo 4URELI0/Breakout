@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +12,7 @@ public class TitleAnimation : MonoBehaviour
     }
     IEnumerator TituloAnim()
     {
-        foreach(char caracter in titlePhrase)
+        foreach (char caracter in titlePhrase)
         {
             textBr.text = textBr.text + caracter;
             yield return new WaitForSeconds(0.5f);

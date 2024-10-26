@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;//Es una función que facilita el acceso a clases y funciones relacionada con la gestion de escena
 using UnityEngine.UI;
@@ -15,7 +13,7 @@ public class UIController : MonoBehaviour
     /*Métodos que usaremos para llamar desde GameManager*/
     public void ActivateLosePanel()//Misma función que ActivateWinnerPanel pero de derrota
     {
-        losePanel.SetActive(true);  
+        losePanel.SetActive(true);
     }
     public void ActivateWinnerPanel(float gameTime)//Su cargo sera mostrar la pantalla de winner que por defecto esta desactivada pero si cumple la condición la pone en true
     {
@@ -41,7 +39,6 @@ public class UIController : MonoBehaviour
             {
                 livesImg[i].SetActive(false);//Si es verdadera ocultamos el elemento 
             }
-
         }
     }
 }

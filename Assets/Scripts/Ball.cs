@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Ball : MonoBehaviour
@@ -9,12 +7,12 @@ public class Ball : MonoBehaviour
     Vector2 currentVelocity;
     [SerializeField] float speed = 3f;
     GameManager gameManager;//Acceso al gameManager desde el script
-    
+
     /*Sonidos*/
     [SerializeField] AudioClip paddleBounce;
     [SerializeField] AudioClip bounce;
     [SerializeField] AudioClip loseLife;
-    
+
     void Start()
     {
         //Nombre de la variable declarado en la linea 7,
@@ -27,7 +25,7 @@ public class Ball : MonoBehaviour
     }
     void FixedUpdate()//Los tiempos delta son constantes
     {
-        currentVelocity = rigidBody2D.velocity;   
+        currentVelocity = rigidBody2D.velocity;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -41,7 +39,7 @@ public class Ball : MonoBehaviour
             FindObjectOfType<AudioController>().PlaySfx(loseLife);
             if (gameManager != null)//Lo utilizamos con if != null para verificar que exista un componente gameManager, es una seguridad
             {
-             gameManager.PlayerLives--;
+                gameManager.PlayerLives--;
             }
         }
         if (collision.transform.CompareTag("Player"))
@@ -57,8 +55,8 @@ public class Ball : MonoBehaviour
     }
     public void LaunchBall()
     {
-     transform.SetParent(null);//Utilizamos este código para decir que la bola ya no es hijo del paddle en el momento de ser lanzada; Surgía el problema de que la bola seguía al paddle cuando es lanzada
-     rigidBody2D.velocity = Vector2.up * speed;//No utilizamos el deltaTime por que, por que el motor de física tiene tiempos delta definido y constantes que no dependen de la velocidad de la computadora 
+        transform.SetParent(null);//Utilizamos este código para decir que la bola ya no es hijo del paddle en el momento de ser lanzada; Surgía el problema de que la bola seguía al paddle cuando es lanzada
+        rigidBody2D.velocity = Vector2.up * speed;//No utilizamos el deltaTime por que, por que el motor de física tiene tiempos delta definido y constantes que no dependen de la velocidad de la computadora 
     }
     public void ResetBall()
     {

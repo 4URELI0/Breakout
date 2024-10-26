@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Brick : MonoBehaviour
 {
@@ -9,10 +6,11 @@ public class Brick : MonoBehaviour
     GameManager gameManager;
     [SerializeField] GameObject explosionPrefab;//Para la animacion de la explosion
     [SerializeField] GameObject[] powerUpPrefabs;//Guardar los power up en el script
-    
+    private GameObject newPowerUp;
+
     private void Start()
     {
-        
+
         gameManager = FindObjectOfType<GameManager>();//Es util por solo existirá un componente de este tipo en todo el juego
         if (gameManager != null)
         {
@@ -26,16 +24,14 @@ public class Brick : MonoBehaviour
         {
             gameManager.BricksOnLevel--;//comentario linea 30
         }
-        if (gameManager.bigSize == false && gameManager.bigSpeed == false) 
+        if (gameManager.bigSize == false && gameManager.bigSpeed == false)
         {
             //Numeros aleatorio
             int numeroRandom = Random.Range(0, 100);
             if (numeroRandom < 40)//Es como tener un 40% de probabilidad que aparesca un power up
             {
-                /*Crear un powerUp al destruir un bloque*/
-                int powerUpRandom = Random.Range(0, powerUpPrefabs.Length);
-                Instantiate(powerUpPrefabs[powerUpRandom], transform.position, Quaternion.identity);
-
+                GameObject newPowerUp = PowerUpPool.Instance.GetFromPool();
+                newPowerUp.transform.position = transform.position;
             }
         }
         Destroy(gameObject);
