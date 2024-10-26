@@ -4,9 +4,10 @@
 
 | Foto de Perfil               | Apellido y Nombre          | Libreta Universitaria  | 
 |--------------------------------------|----------------------------------|------------------------|
+| [<img src="https://github.com/NT125.png" alt="Torres Ismael Ignacio Miguel" width="60" />](https://github.com/NT125)  | *Torres, Ismael ignacio Miguel*             | *TUV00095*              |
 | [<img src="https://github.com/4URELI0.png" alt="Arraya Quispe Cristian Javier" width="60" />](https://github.com/4URELI0)  | *Arraya Quispe, Cristian Javier*  | *TUV000651*           |
 | [<img src="https://github.com/AmaruSegovia.png" alt="Segovia Joaquin Amaru" width="60" />](https://github.com/AmaruSegovia)  | *Segovia, joaquín amaru*      | *TUV00684*             | 
-| [<img src="https://github.com/NT125.png" alt="Torres Ismael Ignacio Miguel" width="60" />](https://github.com/NT125)  | *Torres, Ismael ignacio Miguel*             | *TUV00095*              |
+
 
   
 > [!CAUTION]
