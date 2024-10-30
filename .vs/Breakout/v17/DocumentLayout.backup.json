@@ -7,32 +7,20 @@
       "RelativeMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\objectpool\\poweruppool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\assets\\scripts\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\assets\\scripts\\ball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\assets\\scripts\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\assets\\scripts\\titleanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\titleanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\assets\\scripts\\animationevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\animationevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\assets\\scripts\\audiocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\audiocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\assets\\scripts\\paddle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\paddle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\assets\\scripts\\brick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\brick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\assets\\scripts\\mainmenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,12 +31,24 @@
       "RelativeMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menuopciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\assets\\scripts\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\uicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\assets\\scripts\\paddle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\paddle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\assets\\scripts\\ball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\assets\\scripts\\brick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\brick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\assets\\scripts\\animationevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\animationevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\assets\\scripts\\audiocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\audiocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B91EFDE-9B25-2316-2D71-6E972A83EF85}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -72,53 +72,53 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\ObjectPool\\PowerUpPool.cs",
               "ToolTip": "C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\Assets\\Scripts\\ObjectPool\\PowerUpPool.cs",
               "RelativeToolTip": "Assets\\Scripts\\ObjectPool\\PowerUpPool.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwDEAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-19T11:28:23.665Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 2,
               "Title": "Ball.cs",
               "DocumentMoniker": "C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\Assets\\Scripts\\Ball.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Ball.cs",
               "ToolTip": "C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\Assets\\Scripts\\Ball.cs",
               "RelativeToolTip": "Assets\\Scripts\\Ball.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAiwCUAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAAEAAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-27T20:58:26.551Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "UIController.cs",
               "DocumentMoniker": "C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\Assets\\Scripts\\UIController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UIController.cs",
               "ToolTip": "C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\Assets\\Scripts\\UIController.cs",
               "RelativeToolTip": "Assets\\Scripts\\UIController.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAiwCgAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAADwvygAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-27T20:58:56.427Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "MenuOpciones.cs",
               "DocumentMoniker": "C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\Assets\\Scripts\\MenuOpciones.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MenuOpciones.cs",
               "ToolTip": "C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\Assets\\Scripts\\MenuOpciones.cs",
               "RelativeToolTip": "Assets\\Scripts\\MenuOpciones.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvw4AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-27T20:58:41.873Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "MainMenuController.cs",
               "DocumentMoniker": "C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\Assets\\Scripts\\MainMenuController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MainMenuController.cs",
@@ -131,20 +131,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Brick.cs",
               "DocumentMoniker": "C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\Assets\\Scripts\\Brick.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Brick.cs",
               "ToolTip": "C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\Assets\\Scripts\\Brick.cs",
               "RelativeToolTip": "Assets\\Scripts\\Brick.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwB8AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCAAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T20:58:30.756Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-27T20:58:30.756Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
@@ -152,25 +151,23 @@
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAYwDYAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T20:58:34.348Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-27T20:58:34.348Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Paddle.cs",
               "DocumentMoniker": "C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\Assets\\Scripts\\Paddle.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Paddle.cs",
               "ToolTip": "C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\Assets\\Scripts\\Paddle.cs",
               "RelativeToolTip": "Assets\\Scripts\\Paddle.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAowGsAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAYwEUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T20:58:44.837Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-27T20:58:44.837Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "AudioController.cs",
               "DocumentMoniker": "C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\Assets\\Scripts\\AudioController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AudioController.cs",
@@ -178,12 +175,11 @@
               "RelativeToolTip": "Assets\\Scripts\\AudioController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T20:58:20.673Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-27T20:58:20.673Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "AnimationEvents.cs",
               "DocumentMoniker": "C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\Assets\\Scripts\\AnimationEvents.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AnimationEvents.cs",
@@ -191,31 +187,30 @@
               "RelativeToolTip": "Assets\\Scripts\\AnimationEvents.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T20:58:16.394Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-27T20:58:16.394Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "TitleAnimation.cs",
               "DocumentMoniker": "C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\Assets\\Scripts\\TitleAnimation.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TitleAnimation.cs",
               "ToolTip": "C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\Assets\\Scripts\\TitleAnimation.cs",
               "RelativeToolTip": "Assets\\Scripts\\TitleAnimation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAIwBAAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAIwAYAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-23T23:00:54.201Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "PowerUp.cs",
               "DocumentMoniker": "C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\Assets\\Scripts\\PowerUp.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PowerUp.cs",
               "ToolTip": "C:\\Users\\array\\OneDrive\\Escritorio\\Breakout\\Breakout\\Assets\\Scripts\\PowerUp.cs",
               "RelativeToolTip": "Assets\\Scripts\\PowerUp.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAQwBsAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-27T20:58:52.051Z",
               "EditorCaption": ""

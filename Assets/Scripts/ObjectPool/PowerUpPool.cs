@@ -1,40 +1,70 @@
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class PowerUpPool : MonoBehaviour
 {
-    [SerializeField] GameObject[] powerUpObject;
-    private Queue<GameObject> availablePowerUp = new Queue<GameObject>();
-    public static PowerUpPool Instance { get; private set; }
+    public static PowerUpPool Instance;
+
+    [SerializeField] GameObject[] powerUpPrefab;
+    private ObjectPool<GameObject> powerUpPool;
+
+    [SerializeField] Transform poolContainer;
 
     private void Awake()
     {
         Instance = this;
-    }
-
-    public void GrowPool()
-    {
-
-        foreach (var powerUp in powerUpObject)
+        if (poolContainer == null)
         {
-            var instanceToPool = Instantiate(powerUp, Vector3.zero, Quaternion.identity);
-            instanceToPool.SetActive(false);
-            AddToPool(instanceToPool);
+            poolContainer = new GameObject("PowerUp_Pool_Container").transform;
         }
     }
-    public void AddToPool(GameObject instance)
+
+    private void Start()
     {
-        instance.SetActive(false);
-        availablePowerUp.Enqueue(instance);
+        powerUpPool = new ObjectPool<GameObject>(
+            createFunc: () =>
+            {
+                GameObject powerUp = null;
+                for (int i = 0; i < powerUpPrefab.Length; i++)
+                {
+                    powerUp = Instantiate(powerUpPrefab[i]);
+                    powerUp.transform.SetParent(poolContainer);
+                    powerUp.SetActive(false);
+                }
+                return powerUp;
+            },
+            actionOnGet: powerUp =>
+            {
+                powerUp.SetActive(true);
+                // Opcional: Configurar posición inicial
+                powerUp.transform.position = Vector3.zero;
+            },
+            actionOnRelease: powerUp =>
+            {
+                powerUp.SetActive(false);
+                powerUp.transform.SetParent(poolContainer.transform);
+                powerUp.transform.position = Vector3.zero;
+            },
+            collectionCheck: false,
+            defaultCapacity: 1,
+            maxSize: 2
+        );
+        for (int i = 0; i < 2; i++)
+        {
+            GameObject powerUp = powerUpPool.Get();
+            powerUpPool.Release(powerUp);
+        }
     }
     public GameObject GetFromPool()
     {
-        if (availablePowerUp.Count == 0)
+        return powerUpPool.Get();
+    }
+    public void ReturnToPool(GameObject powerUp)
+    {
+        if (powerUp != null)
         {
-            GrowPool();
+            Debug.Log($"Power-Up {powerUp.name} desactivado y devuelto al pool");
+            powerUpPool.Release(powerUp);
         }
-        var instance = availablePowerUp.Dequeue();
-        instance.SetActive(true);
-        return instance;
     }
 }

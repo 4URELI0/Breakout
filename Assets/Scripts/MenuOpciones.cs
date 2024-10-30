@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class MenuOpciones : MonoBehaviour
 {
     [SerializeField] AudioMixer audioMixer;
-    public void changeVolume(float volumen)
+    public void ChangeVolume(float volumen)
     {
         audioMixer.SetFloat("Volumen", volumen);
     }

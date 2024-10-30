@@ -5511,9 +5511,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dba2f604111e3b04899363c9db5a2531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUpObject:
+  powerUpPrefab:
   - {fileID: 6052969213075965335, guid: e800d6c980496084aa26539c2d1d969f, type: 3}
   - {fileID: 4888782043991844224, guid: da89c5ffb9b48674aad894b99040c350, type: 3}
+  poolContainer: {fileID: 1577391253}
 --- !u!4 &868180226
 Transform:
   m_ObjectHideFlags: 0
@@ -7369,7 +7370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidBody2D: {fileID: 1207456351}
-  speed: 12
+  speed: 4
   paddleBounce: {fileID: 8300000, guid: 326bdd055ff7db14a9053f8d214f4111, type: 3}
   bounce: {fileID: 8300000, guid: 7ffa0b85ed21e064b80e7aa8794b89b7, type: 3}
   loseLife: {fileID: 8300000, guid: 45e463a3df60bc14da929da422f0190a, type: 3}
@@ -9130,6 +9131,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3354481, y: 0.18321273}
   m_EdgeRadius: 0
+--- !u!1 &1577391252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1577391253}
+  m_Layer: 0
+  m_Name: Pool-Container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1577391253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577391252}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1588713625
 GameObject:
   m_ObjectHideFlags: 0
@@ -12923,3 +12955,4 @@ SceneRoots:
   - {fileID: 1906178169}
   - {fileID: 1499632375}
   - {fileID: 868180226}
+  - {fileID: 1577391253}

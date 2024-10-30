@@ -68,7 +68,7 @@ public class Paddle : MonoBehaviour
                 Debug.Log("Obtuvo un power up de:Aumento de velocidad " + gameManager.bigSpeed);
                 StartCoroutine(BigSpeedPower());
             }
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
         }
     }
     IEnumerator BigSizePower()

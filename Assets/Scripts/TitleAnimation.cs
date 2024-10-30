@@ -8,9 +8,9 @@ public class TitleAnimation : MonoBehaviour
     public Text textBr;
     void Start()
     {
-        StartCoroutine(TituloAnim());
+        StartCoroutine(TitleAnim());
     }
-    IEnumerator TituloAnim()
+    IEnumerator TitleAnim()
     {
         foreach (char caracter in titlePhrase)
         {

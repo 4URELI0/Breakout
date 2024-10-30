@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using UnityEngine;
 
 public class PowerUp : MonoBehaviour
@@ -11,13 +12,25 @@ public class PowerUp : MonoBehaviour
     public PowerUpType powerUpType;//Actuara como selector del tipo de power-up desde la ventana inspector
     private void Update()
     {
-        transform.position += speed * Time.deltaTime * Vector3.down;//Agregamos un movimiento hacia abajo para los power ups
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("LimiteMuerte"))
+        if (gameObject.activeInHierarchy)
         {
-            PowerUpPool.Instance.AddToPool(gameObject);
+            transform.position += speed * Time.deltaTime * Vector3.down;//Agregamos un movimiento hacia abajo para los power ups
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PowerUpPool.Instance.ReturnToPool(gameObject);
+            Debug.Log("Colision trigger del script power up");
+        }
+    }
+    /*El power up se desactivara si esta fuera de la camara*/
+    private void OnBecameInvisible()
+    {
+        if (gameObject.activeInHierarchy)
+        {
+            PowerUpPool.Instance.ReturnToPool(gameObject);
         }
     }
 }

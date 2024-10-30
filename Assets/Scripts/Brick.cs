@@ -5,7 +5,7 @@ public class Brick : MonoBehaviour
     //GameObject gameManagerObj;
     GameManager gameManager;
     [SerializeField] GameObject explosionPrefab;//Para la animacion de la explosion
-    [SerializeField] GameObject[] powerUpPrefabs;//Guardar los power up en el script
+    //[SerializeField] GameObject[] powerUpPrefabs;//Guardar los power up en el script
     private GameObject newPowerUp;
 
     private void Start()
@@ -31,7 +31,11 @@ public class Brick : MonoBehaviour
             if (numeroRandom < 40)//Es como tener un 40% de probabilidad que aparesca un power up
             {
                 GameObject newPowerUp = PowerUpPool.Instance.GetFromPool();
-                newPowerUp.transform.position = transform.position;
+                if (newPowerUp != null)
+                {
+                    newPowerUp.transform.position = transform.position;
+                    newPowerUp.SetActive(true);
+                }
             }
         }
         Destroy(gameObject);
