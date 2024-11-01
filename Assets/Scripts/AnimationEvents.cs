@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class AnimationEvents : MonoBehaviour
 {
     /*Se encargar de destruir la animación al chocar con un bloque*/

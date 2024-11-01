@@ -56,11 +56,9 @@ public class Paddle : MonoBehaviour
             //Indicamos que el paddle tiene un power up
             if (collision.GetComponent<PowerUp>().powerUpType == PowerUp.PowerUpType.IncreaseSize)
             {
-
                 gameManager.bigSize = true;
                 Debug.Log("Obtuvo un power up de:Aumento de tamaño" + gameManager.bigSize);//Verificacion
                 StartCoroutine(BigSizePower());//Llamamos a la corrutina justo en el momento que se detecte
-
             }
             else if (collision.GetComponent<PowerUp>().powerUpType == PowerUp.PowerUpType.IncreaseSpeed)
             {

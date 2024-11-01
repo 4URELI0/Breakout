@@ -8,11 +8,12 @@ public class PowerUpPool : MonoBehaviour
     [SerializeField] GameObject[] powerUpPrefab;
     private ObjectPool<GameObject> powerUpPool;
 
-    [SerializeField] Transform poolContainer;
+    [SerializeField] Transform poolContainer;//En esta variable guardaremos los power ups, actuara como contenedor
 
     private void Awake()
     {
         Instance = this;
+        /*Verificamos que PoolContainer este creado, en caso que no, crea uno nuevo*/
         if (poolContainer == null)
         {
             poolContainer = new GameObject("PowerUp_Pool_Container").transform;
@@ -24,6 +25,7 @@ public class PowerUpPool : MonoBehaviour
         powerUpPool = new ObjectPool<GameObject>(
             createFunc: () =>
             {
+                /*Llevaremos los power ups al Game Object Pool container y se una vez llevado se los desactivara a cada uno*/
                 GameObject powerUp = null;
                 for (int i = 0; i < powerUpPrefab.Length; i++)
                 {
@@ -35,15 +37,11 @@ public class PowerUpPool : MonoBehaviour
             },
             actionOnGet: powerUp =>
             {
-                powerUp.SetActive(true);
-                // Opcional: Configurar posición inicial
-                powerUp.transform.position = Vector3.zero;
+                powerUp.transform.position = Vector3.zero;//Iniciamos la posicion en 0
             },
             actionOnRelease: powerUp =>
             {
-                powerUp.SetActive(false);
-                powerUp.transform.SetParent(poolContainer.transform);
-                powerUp.transform.position = Vector3.zero;
+                powerUp.SetActive(false);//Una vez utilizado el power up lo desactivamos
             },
             collectionCheck: false,
             defaultCapacity: 1,
@@ -55,10 +53,15 @@ public class PowerUpPool : MonoBehaviour
             powerUpPool.Release(powerUp);
         }
     }
+    /*Activaremos el power up*/
     public GameObject GetFromPool()
     {
-        return powerUpPool.Get();
+        int randomIndex = Random.Range(0, powerUpPrefab.Length);//Variable random que elegira a uno de los dos power ups
+        GameObject selectPowerUp = poolContainer.GetChild(randomIndex).gameObject;//Guardamos el valor aleatorio en la eleccion del hijo y lo guardamos en una variable tipo gameObject 
+        selectPowerUp.SetActive(true);//Activamos el powerup elegido
+        return selectPowerUp;
     }
+    /*Devolvera el power up al pool*/
     public void ReturnToPool(GameObject powerUp)
     {
         if (powerUp != null)

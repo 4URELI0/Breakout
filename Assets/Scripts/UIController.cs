@@ -2,7 +2,6 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;//Es una función que facilita el acceso a clases y funciones relacionada con la gestion de escena
 using UnityEngine.UI;
-
 public class UIController : MonoBehaviour
 {
     [SerializeField] GameObject losePanel;

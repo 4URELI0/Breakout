@@ -2,12 +2,8 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour
 {
-    //GameObject gameManagerObj;
     GameManager gameManager;
     [SerializeField] GameObject explosionPrefab;//Para la animacion de la explosion
-    //[SerializeField] GameObject[] powerUpPrefabs;//Guardar los power up en el script
-    private GameObject newPowerUp;
-
     private void Start()
     {
 
@@ -30,11 +26,11 @@ public class Brick : MonoBehaviour
             int numeroRandom = Random.Range(0, 100);
             if (numeroRandom < 40)//Es como tener un 40% de probabilidad que aparesca un power up
             {
-                GameObject newPowerUp = PowerUpPool.Instance.GetFromPool();
+                GameObject newPowerUp = PowerUpPool.Instance.GetFromPool();//Llamaremos el metodo para activar al powerup
+                /*Si el power up existe, haremos que se cree en la misma posicion del brick*/
                 if (newPowerUp != null)
                 {
                     newPowerUp.transform.position = transform.position;
-                    newPowerUp.SetActive(true);
                 }
             }
         }
