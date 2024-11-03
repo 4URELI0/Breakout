@@ -23,7 +23,7 @@ public class UIController : MonoBehaviour
     {
         SceneManager.LoadScene("Game");//Accedemos a la clase SceneManager para ejecutar el metodo LoadScene y nos pide como parámetro el nombre de la escena que deseamos cargar
         Debug.Log("Reiniciar el juego");
-        FindObjectOfType<AudioController>().PlaySfx(buttonPress);
+        AudioManager.instance.ReproducirSonido(buttonPress);
     }
     public void GoToMainMenu()
     {

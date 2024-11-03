@@ -34,22 +34,22 @@ public class Ball : MonoBehaviour
         /*Colisión para el sistema de derrota del juego*/
         if (collision.transform.CompareTag("LimiteMuerte"))//Verifica si la bola colisiono con al limite de abajo o por si tag LimiteMuerte y si es verdadero salta el mensaje
         {
-            Debug.Log("Colisión con el limite de abajo");
-            FindObjectOfType<AudioController>().PlaySfx(loseLife);
             if (gameManager != null)//Lo utilizamos con if != null para verificar que exista un componente gameManager, es una seguridad
             {
                 gameManager.PlayerLives--;
             }
+            Debug.Log("Colisión con el limite de abajo");
+            AudioManager.instance.ReproducirSonido(loseLife);
         }
         if (collision.transform.CompareTag("Player"))
         {
-            FindObjectOfType<AudioController>().PlaySfx(paddleBounce);
             Debug.Log("verificación de clip");
+            AudioManager.instance.ReproducirSonido(paddleBounce);
         }
         if (collision.transform.CompareTag("Brick"))
         {
-            FindObjectOfType<AudioController>().PlaySfx(bounce);
             Debug.Log("Clip de brick");
+            AudioManager.instance.ReproducirSonido(bounce);
         }
     }
     public void LaunchBall()
