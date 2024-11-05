@@ -14,4 +14,8 @@ public class MainMenuController : MonoBehaviour
     {
         SceneManager.LoadScene("Options");
     }
+    public void StartGameMultiplayer()
+    {
+        SceneManager.LoadScene("GameMP");
+    }
 }
