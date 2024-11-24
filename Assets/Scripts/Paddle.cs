@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Paddle : MonoBehaviour
@@ -12,17 +10,17 @@ public class Paddle : MonoBehaviour
     [SerializeField] float speedPU = 50.5f;
     [SerializeField] byte timeBigSize = 10;//Para modificar el tiempo en la ventana inspector la velocidad del powerUp
     [SerializeField] byte timeBigSpeed = 10;//Para modificar el tiempo en la ventana inspector la velocidad del power ups
-   
-    
+
+
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
-       
+
     }
 
     void Update()
     {
-        MovimientoJugador();       
+        MovimientoJugador();
     }
     void MovimientoJugador()
     {
@@ -35,16 +33,16 @@ public class Paddle : MonoBehaviour
         {
             transform.position += speed * Time.deltaTime * Vector3.left;
         }
-        if (Input.GetMouseButtonDown(0))//Usamos GetMouseBottonDown para leer el input que necesitamos, el 0 indica que usamos el botón izquierdo del mouse ya que es un arreglo
+        if (Input.GetMouseButtonDown(0))//Usamos GetMouseBottonDown para leer el input que necesitamos, el 0 indica que usamos el botï¿½n izquierdo del mouse ya que es un arreglo
         {
-            /*La razon por cual revisamos si el valor de la propiedad es falso es por que cada una tiene una condición diferente */
+            /*La razon por cual revisamos si el valor de la propiedad es falso es por que cada una tiene una condiciï¿½n diferente */
             if (gameManager.BallOnPlay == false)//Pasara a false cada vez que la bola se detenga y regresara verdadero cuando sea lanzada de nuevo
             {
                 gameManager.BallOnPlay = true; //A)Lee el input del usuario y le dice a GameManager en que momento lanzar la bola 
             }
             if (gameManager.GameStarted == false)//Se ejecutara una vez al inicio del juego
             {
-                gameManager.GameStarted = true;  
+                gameManager.GameStarted = true;
             }
         }
     }
@@ -52,39 +50,38 @@ public class Paddle : MonoBehaviour
     {
         if (collision.CompareTag("PowerUp"))
         {
-            //Obtenemos el componente PowerUp pero con el objeto de colisión por la información que este contiene con el paddle
+            //Obtenemos el componente PowerUp pero con el objeto de colisiï¿½n por la informaciï¿½n que este contiene con el paddle
             //Obtenemos su variable powerUpType y verificamos si corresponde al 
             //Accedemos a la clase (PowerUp) y luego el nombre del enum (PowerUpType)
             //Indicamos que el paddle tiene un power up
             if (collision.GetComponent<PowerUp>().powerUpType == PowerUp.PowerUpType.IncreaseSize)
             {
-
                 gameManager.bigSize = true;
-                Debug.Log("Obtuvo un power up de:Aumento de tamaño" + gameManager.bigSize);//Verificacion
+                Debug.Log("Obtuvo un power up de:Aumento de tamaï¿½o" + gameManager.bigSize);//Verificacion
                 StartCoroutine(BigSizePower());//Llamamos a la corrutina justo en el momento que se detecte
-            
-            }else if (collision.GetComponent<PowerUp>().powerUpType == PowerUp.PowerUpType.IncreaseSpeed)
+            }
+            else if (collision.GetComponent<PowerUp>().powerUpType == PowerUp.PowerUpType.IncreaseSpeed)
             {
                 gameManager.bigSpeed = true;
                 Debug.Log("Obtuvo un power up de:Aumento de velocidad " + gameManager.bigSpeed);
                 StartCoroutine(BigSpeedPower());
             }
-            Destroy(collision.gameObject);   
+            //Destroy(collision.gameObject);
         }
     }
-   IEnumerator BigSizePower()
-   {
+    IEnumerator BigSizePower()
+    {
         float originalXLimit = xLimit;//Guardamos el limite original en una variable local
         xLimit = xLimitWhenBig;//Indicamos que el nuevo limit sera el valor de xLimitWhenBig
-        //Incrementar de tamaño
-        Vector3 newSize = transform.localScale;//Un vector3 que almacena el tamaño actual del paddle
+        //Incrementar de tamaï¿½o
+        Vector3 newSize = transform.localScale;//Un vector3 que almacena el tamaï¿½o actual del paddle
         while (transform.localScale.x < 5.5f)//Un while que toma el eje X del newSize y lo incrementa mientras el valor sea menor a 1.5
         {
-            newSize.x += Time.deltaTime;//Utilizamos un deltaTime para que su animación sea fluida en el incremento
+            newSize.x += Time.deltaTime;//Utilizamos un deltaTime para que su animaciï¿½n sea fluida en el incremento
             transform.localScale = newSize;//Luego asignamos el valor actualizado a la scala del paddle
         }
         yield return new WaitForSeconds(timeBigSize);
-        //Reducir a su tamaño original
+        //Reducir a su tamaï¿½o original
         while (transform.localScale.x > 3)
         {
             newSize.x -= Time.deltaTime;
@@ -92,8 +89,8 @@ public class Paddle : MonoBehaviour
         }
         gameManager.bigSize = false;//Indicamos que el paddle ya no tiene el power up
         xLimit = originalXLimit;//Una vez terminado los efectos del power Up este volvera a su tamanio original
-   }
-   
+    }
+
     IEnumerator BigSpeedPower()
     {
         //Aumentar la velocidad del paddle
@@ -103,9 +100,8 @@ public class Paddle : MonoBehaviour
         yield return new WaitForSeconds(timeBigSpeed);
         //Disminuir la velocidad del paddle
         speed = originalSpeed;
-        
+
         gameManager.bigSpeed = false;
         Debug.Log("Aumento de velocidad desactivado");
     }
-    
 }
