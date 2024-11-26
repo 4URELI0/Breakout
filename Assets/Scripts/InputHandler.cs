@@ -40,21 +40,18 @@ public interface ICommandable
 public class ComandoIzquierda : ICommandable
 {
     private Paddle jugador;
-    private Transform transform;
-
     //Constructor
     public ComandoIzquierda(Paddle jugador)
     {
         this.jugador = jugador;
-        this.transform = jugador.GetComponent<Transform>();
     }
 
     public void EjecutarComando()
     {
         //Chequeando Movimiento
-        if (transform.position.x < jugador.xLimit)
+        if (jugador.transform.position.x < jugador.xLimit)
         {
-            transform.position += jugador.speed * Time.deltaTime * Vector3.left;
+            jugador.transform.position += jugador.speed * Time.deltaTime * Vector3.left;
         }
     }
 }
@@ -62,19 +59,17 @@ public class ComandoIzquierda : ICommandable
 public class ComandoDerecha : ICommandable
 {
     private Paddle jugador;
-    private Transform transform;
     //Constructor
     public ComandoDerecha(Paddle jugador)
     {
         this.jugador = jugador;
-        this.transform = jugador.GetComponent<Transform>();
     }
 
     public void EjecutarComando()
     {
-        if (transform.position.x < jugador.xLimit)
+        if (jugador.transform.position.x < jugador.xLimit)
         {
-            transform.position += jugador.speed * Time.deltaTime * Vector3.right;
+            jugador.transform.position += jugador.speed * Time.deltaTime * Vector3.right;
         }
     }
 }
