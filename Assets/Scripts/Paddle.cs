@@ -3,13 +3,15 @@ using UnityEngine;
 
 public class Paddle : MonoBehaviour
 {
-    [SerializeField] float speed = 9f;
+    [SerializeField] public float speed = 9f;
     GameManager gameManager;//Obtener referencia al GameManager
-    [SerializeField] float xLimit = 7.29f;//Limites que el paddle puede manejar
-    [SerializeField] float xLimitWhenBig = 6f;
-    [SerializeField] float speedPU = 50.5f;
-    [SerializeField] byte timeBigSize = 10;//Para modificar el tiempo en la ventana inspector la velocidad del powerUp
-    [SerializeField] byte timeBigSpeed = 10;//Para modificar el tiempo en la ventana inspector la velocidad del power ups
+    [SerializeField] public float xLimit = 7.29f;//Limites que el paddle puede manejar
+    [SerializeField] public float xLimitWhenBig = 6f;
+    [SerializeField] public float speedPU = 50.5f;
+    [SerializeField] public byte timeBigSize = 10;//Para modificar el tiempo en la ventana inspector la velocidad del powerUp
+    [SerializeField] public byte timeBigSpeed = 10;//Para modificar el tiempo en la ventana inspector la velocidad del power ups
+
+
 
 
     private void Start()
@@ -20,32 +22,30 @@ public class Paddle : MonoBehaviour
 
     void Update()
     {
-        MovimientoJugador();
     }
-    void MovimientoJugador()
+
+    public void MovIzquierda()
     {
-        //Va a verificar si el usuario presiono una tecla con el if
-        if (Input.GetKey(KeyCode.D) && transform.position.x < xLimit)//Verifica si se presiono la tecla D para mover el paddle hacia la derecha
+        transform.position += speed * Time.deltaTime * Vector3.left;
+    }
+    public void MovDerecha()
+    {
+        transform.position += speed * Time.deltaTime * Vector3.right;
+    }
+
+    public void LanzarPelota()
+    {
+        /* La razon por cual revisamos si el valor de la propiedad es falso es por que cada una tiene una condición diferente */
+        if (gameManager.BallOnPlay == false)//Pasara a false cada vez que la bola se detenga y regresara verdadero cuando sea lanzada de nuevo
         {
-            transform.position += speed * Time.deltaTime * Vector3.right;
+            gameManager.BallOnPlay = true; //A)Lee el input del usuario y le dice a GameManager en que momento lanzar la bola 
         }
-        else if (Input.GetKey(KeyCode.A) && transform.position.x > -xLimit)//Verifica si se presiono la tecla A para mover el paddle hacia la izquierda y los limite del rango del paddle
+        if (gameManager.GameStarted == false)//Se ejecutara una vez al inicio del juego
         {
-            transform.position += speed * Time.deltaTime * Vector3.left;
-        }
-        if (Input.GetMouseButtonDown(0))//Usamos GetMouseBottonDown para leer el input que necesitamos, el 0 indica que usamos el bot�n izquierdo del mouse ya que es un arreglo
-        {
-            /*La razon por cual revisamos si el valor de la propiedad es falso es por que cada una tiene una condici�n diferente */
-            if (gameManager.BallOnPlay == false)//Pasara a false cada vez que la bola se detenga y regresara verdadero cuando sea lanzada de nuevo
-            {
-                gameManager.BallOnPlay = true; //A)Lee el input del usuario y le dice a GameManager en que momento lanzar la bola 
-            }
-            if (gameManager.GameStarted == false)//Se ejecutara una vez al inicio del juego
-            {
-                gameManager.GameStarted = true;
-            }
+            gameManager.GameStarted = true;
         }
     }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("PowerUp"))

@@ -11,13 +11,14 @@ public class PaddleMultiplayer : NetworkBehaviour
         if (!IsOwner)
             return;
 
-        float move = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        /*float move = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         transform.Translate(move, 0, 0);
 
         // Limita el paddle al área de juego
         Vector3 pos = transform.position;
         pos.x = Mathf.Clamp(pos.x, -10f, 10f); // Ajusta estos límites según tu área de juego
         transform.position = pos;
+        */
     }
 
     [ServerRpc]
