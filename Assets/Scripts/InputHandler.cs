@@ -6,33 +6,26 @@ public class InputHandler : MonoBehaviour
 {
     public Paddle jugador;
 
-    private ICommandable comandoIzquierda;
-    private ICommandable comandoDerecha;
-    private ICommandable comandoClic;
-
-    public void Start()
-    {
-        comandoIzquierda = new ComandoIzquierda(jugador);
-        comandoDerecha = new ComandoDerecha(jugador);
-        comandoClic = new ComandoClic(jugador);
-    }
+    private ICommandable comandoMovimiento;
 
     public void Update()
     {
         //Chequeando Movimiento
-        if (Input.GetKey(KeyCode.A) && transform.position.x < jugador.xLimit)//Verifica si se presiono la tecla D para mover el paddle hacia la derecha
+        if (Input.GetKey(KeyCode.A))//Verifica si se presiono la tecla D para mover el paddle hacia la derecha
         {
-            comandoIzquierda.EjecutarComando();
+            comandoMovimiento = new ComandoIzquierda(jugador);
+            comandoMovimiento.EjecutarComando();
         }
-        else if (Input.GetKey(KeyCode.D) && transform.position.x > -jugador.xLimit)//Verifica si se presiono la tecla A para mover el paddle hacia la izquierda y los limite del rango del paddle
+        else if (Input.GetKey(KeyCode.D))//Verifica si se presiono la tecla A para mover el paddle hacia la izquierda y los limite del rango del paddle
         {
-            comandoDerecha.EjecutarComando();
+            comandoMovimiento = new ComandoDerecha(jugador);
+            comandoMovimiento.EjecutarComando();
         }
-
-        //Chequeando clic
+       
         if (Input.GetMouseButtonDown(0))
         {
-            comandoClic.EjecutarComando();
+            comandoMovimiento = new ComandoClic(jugador);
+            comandoMovimiento.EjecutarComando();
         }
     }
 }
@@ -47,32 +40,42 @@ public interface ICommandable
 public class ComandoIzquierda : ICommandable
 {
     private Paddle jugador;
+    private Transform transform;
 
     //Constructor
     public ComandoIzquierda(Paddle jugador)
     {
         this.jugador = jugador;
+        this.transform = jugador.GetComponent<Transform>();
     }
 
     public void EjecutarComando()
     {
-        jugador.MovIzquierda();
+        //Chequeando Movimiento
+        if (transform.position.x < jugador.xLimit)
+        {
+            transform.position += jugador.speed * Time.deltaTime * Vector3.left;
+        }
     }
 }
 
 public class ComandoDerecha : ICommandable
 {
     private Paddle jugador;
-
+    private Transform transform;
     //Constructor
     public ComandoDerecha(Paddle jugador)
     {
         this.jugador = jugador;
+        this.transform = jugador.GetComponent<Transform>();
     }
 
     public void EjecutarComando()
     {
-        jugador.MovDerecha();
+        if (transform.position.x < jugador.xLimit)
+        {
+            transform.position += jugador.speed * Time.deltaTime * Vector3.right;
+        }
     }
 }
 

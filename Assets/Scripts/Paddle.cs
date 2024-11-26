@@ -25,15 +25,6 @@ public class Paddle : MonoBehaviour
     {
     }
 
-    public void MovIzquierda()
-    {
-        transform.position += speed * Time.deltaTime * Vector3.left;
-    }
-    public void MovDerecha()
-    {
-        transform.position += speed * Time.deltaTime * Vector3.right;
-    }
-
     public void LanzarPelota()
     {
         /* La razon por cual revisamos si el valor de la propiedad es falso es por que cada una tiene una condición diferente */
