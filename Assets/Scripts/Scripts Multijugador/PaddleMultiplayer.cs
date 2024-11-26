@@ -1,35 +1,47 @@
-using FishNet.Object;
+using FishNet.Object; // Biblioteca para objetos en red con FishNet.
 using UnityEngine;
 
+/// <summary>
+/// Lï¿½gica para controlar el paddle usando Fish-Net.
+/// </summary>
 public class PaddleMultiplayer : NetworkBehaviour
 {
-    public float speed = 10f;
+    public float speed = 10f; // Velocidad de movimiento del paddle.
 
     private void Update()
     {
-        // Solo el jugador local puede mover su paddle
+        // Solo el propietario del paddle puede controlarlo.
         if (!IsOwner)
             return;
-
-        /*float move = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        float move = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        // Movimiento horizontal del paddle basado en la entrada del jugador.
+        float move = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         transform.Translate(move, 0, 0);
 
-        // Limita el paddle al área de juego
+        // Limita el paddle al ï¿½rea de juego
         Vector3 pos = transform.position;
-        pos.x = Mathf.Clamp(pos.x, -10f, 10f); // Ajusta estos límites según tu área de juego
+        pos.x = Mathf.Clamp(pos.x, -10f, 10f);
         transform.position = pos;
-        */
+
+        // Envï¿½a la posiciï¿½n del paddle al servidor para sincronizarla.
+        SendPaddlePositionToServer(transform.position);
     }
 
+    /// <summary>
+    /// Envia la posiciï¿½n actual del paddle al servidor.
+    /// </summary>
     [ServerRpc]
     private void SendPaddlePositionToServer(Vector3 position)
     {
-        RpcUpdatePaddlePosition(position);
+        RpcUpdatePaddlePosition(position); // Sincroniza la posiciï¿½n con los clientes.
     }
 
+    /// <summary>
+    /// Sincroniza la posiciï¿½n del paddle en todos los clientes.
+    /// </summary>
     [ObserversRpc]
     private void RpcUpdatePaddlePosition(Vector3 position)
     {
-        transform.position = position;
+        transform.position = position; // Actualiza la posiciï¿½n en los clientes.
     }
 }

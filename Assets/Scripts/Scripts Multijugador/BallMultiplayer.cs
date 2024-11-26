@@ -1,17 +1,20 @@
-using FishNet.Object;
-using FishNet.Object.Prediction;
+using FishNet.Object; // Importa la funcionalidad para objetos en red de FishNet.
 using UnityEngine;
 
+/// <summary>
+/// Controla la lógica de la pelota en un juego multijugador usando FishNet.
+/// </summary>
 public class BallMultiplayer : NetworkBehaviour
 {
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private float initialSpeed = 5f;
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private Rigidbody2D rb; // Referencia al Rigidbody2D de la pelota.
+    [SerializeField] private float initialSpeed = 5f; // Velocidad inicial al lanzar la pelota.
+    [SerializeField] private float speed = 5f; // Velocidad base de la pelota.
 
-    private Vector2 currentVelocity;
+    private Vector2 currentVelocity; // Almacena la velocidad actual de la pelota.
 
     private void Awake()
     {
+        // Obtiene la referencia del Rigidbody2D en la inicialización.
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -20,7 +23,7 @@ public class BallMultiplayer : NetworkBehaviour
         base.OnStartNetwork();
         if (IsServerInitialized)
         {
-            LaunchBall(); // Solo el servidor lanza la bola inicialmente
+            LaunchBall(); // Solo el servidor lanza la pelota inicialmente.
         }
     }
 
@@ -28,26 +31,30 @@ public class BallMultiplayer : NetworkBehaviour
     {
         if (IsServerInitialized)
         {
-            // Actualiza la velocidad y posición de la bola
+            // Actualiza la velocidad y posición de la pelota.
             currentVelocity = rb.velocity;
+
+            // Sincroniza estado de la pelota con los clientes.
             RpcSyncBallState(transform.position, rb.velocity);
 
-            // Revisa si la bola está fuera de los límites y reiníciala
+            // Verifica si la pelota sale de los límites del mapa.
             if (transform.position.y < -10f)
             {
-                ResetBall();
+                ResetBall(); // Reinicia la posición de la pelota.
             }
         }
     }
 
+    /// <summary>
+    /// Sincroniza la posición y velocidad de la pelota en todos los clientes.
+    /// </summary>
     [ObserversRpc]
     private void RpcSyncBallState(Vector3 position, Vector2 velocity)
     {
-        // Actualiza la posición y velocidad de la pelota en los clientes
         if (!IsServerInitialized)
         {
-            transform.position = position;
-            rb.velocity = velocity;
+            transform.position = position; // Actualiza posición.
+            rb.velocity = velocity; // Actualiza velocidad.
         }
     }
 
@@ -57,56 +64,52 @@ public class BallMultiplayer : NetworkBehaviour
         {
             if (collision.transform.CompareTag("Player"))
             {
-                // Rebota la pelota en el paddle del jugador, ajustando el ángulo según la posición de la colisión
+                // Rebote especial al chocar con el paddle del jugador.
                 float xDifference = transform.position.x - collision.transform.position.x;
                 Vector2 direction = new Vector2(xDifference, 1).normalized;
                 rb.velocity = direction * speed;
             }
             else if (collision.transform.CompareTag("Brick"))
             {
-                // Lógica de destrucción de ladrillos
-                var brick = collision.gameObject.GetComponent<BrickMultiplayer>();
-                if (brick != null)
-                {
-                    brick.DestroyBrick();
-                }
+                // Lógica para destruir ladrillos al colisionar.
+                collision.gameObject.GetComponent<BrickMultiplayer>()?.DestroyBrick();
 
-                // Rebota en el ladrillo
+                // Rebota en el ladrillo.
                 Vector2 reflectDir = Vector2.Reflect(currentVelocity, collision.GetContact(0).normal);
                 rb.velocity = reflectDir;
             }
             else if (collision.transform.CompareTag("LimiteMuerte"))
             {
-                ResetBall();
+                ResetBall(); // Reinicia la pelota si toca el límite de muerte.
             }
-
             else
             {
-                // Rebota en cualquier otra superficie (bordes del mapa)
+                // Rebota en bordes o superficies genéricas.
                 Vector2 reflectDir = Vector2.Reflect(currentVelocity, collision.GetContact(0).normal);
                 rb.velocity = reflectDir;
             }
         }
     }
 
+    /// <summary>
+    /// Lanza la pelota desde una posición inicial con una velocidad predefinida.
+    /// </summary>
     private void LaunchBall()
     {
-        // Lanza la pelota en una dirección inicial en el servidor
-        rb.velocity = new Vector2(initialSpeed, initialSpeed);
-        transform.SetParent(null);
+        rb.velocity = new Vector2(initialSpeed, initialSpeed); // Velocidad inicial.
+        transform.SetParent(null); // Desvincula la pelota del paddle.
     }
 
+    /// <summary>
+    /// Resetea la posición de la pelota al paddle del jugador.
+    /// </summary>
     private void ResetBall()
     {
-        // Resetea la pelota al paddle cuando sale del mapa
-        rb.velocity = Vector2.zero;
-        Transform paddle = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        transform.SetParent(paddle);
-        Vector2 ballPosition = paddle.position;
-        ballPosition.y += 0.3f;
-        transform.position = ballPosition;
+        rb.velocity = Vector2.zero; // Detiene la pelota temporalmente.
+        Transform paddle = GameObject.FindGameObjectWithTag("Player").transform; // Encuentra el paddle.
+        transform.SetParent(paddle); // Vincula la pelota al paddle.
+        transform.position = paddle.position + Vector3.up * 0.3f; // Ajusta posición.
 
-        // Lanza la bola nuevamente después de posicionarla
-        LaunchBall();
+        LaunchBall(); // Lanza la pelota nuevamente.
     }
 }
