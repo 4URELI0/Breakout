@@ -59,6 +59,7 @@
     <Analyzer Include="C:\Users\amaru\Documents\GitHub\Breakout\Assets\FishNet\Runtime\Plugins\CodeAnalysis\FishNet.CodeAnalysis.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Solid\IPowerUpEffect.cs" />
     <Compile Include="Assets\Scripts\Ball.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\PowerUpPool.cs" />
     <Compile Include="Assets\Scripts\Scripts Multijugador\BallReplicateData.cs" />

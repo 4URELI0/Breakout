@@ -56,11 +56,20 @@ public class PowerUpPool : MonoBehaviour
     /*Activaremos el power up*/
     public GameObject GetFromPool()
     {
-        int randomIndex = Random.Range(0, powerUpPrefab.Length);//Variable random que elegira a uno de los dos power ups
-        GameObject selectPowerUp = poolContainer.GetChild(randomIndex).gameObject;//Guardamos el valor aleatorio en la eleccion del hijo y lo guardamos en una variable tipo gameObject 
-        selectPowerUp.SetActive(true);//Activamos el powerup elegido
+        int randomIndex = Random.Range(0, powerUpPrefab.Length);
+        GameObject selectPowerUp = poolContainer.GetChild(randomIndex).gameObject;
+        selectPowerUp.SetActive(true);
+
+        // Asocia el efecto correspondiente al PowerUp
+        var powerUpScript = selectPowerUp.GetComponent<PowerUp>();
+        if (powerUpScript != null)
+        {
+            powerUpScript.SetEffect(randomIndex); // Asigna el efecto basado en el índice
+        }
+
         return selectPowerUp;
     }
+
     /*Devolvera el power up al pool*/
     public void ReturnToPool(GameObject powerUp)
     {

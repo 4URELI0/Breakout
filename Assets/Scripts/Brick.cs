@@ -2,38 +2,42 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour
 {
-    GameManager gameManager;
-    [SerializeField] GameObject explosionPrefab;//Para la animacion de la explosion
+    private GameManager gameManager;
+    [SerializeField] private GameObject explosionPrefab;
+
     private void Start()
     {
-
-        gameManager = FindObjectOfType<GameManager>();//Es util por solo existirá un componente de este tipo en todo el juego
+        gameManager = FindObjectOfType<GameManager>();
         if (gameManager != null)
         {
-            gameManager.BricksOnLevel++;//Nos aseguramos que este usando la propiedad
+            gameManager.BricksOnLevel++;
         }
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Instantiate(explosionPrefab, transform.position, Quaternion.identity);//Crear la animacion de la explosion con cada bloque destruido
-        if (gameManager != null)//Comprobar que exista, en caso que si restara a BricksOnLevel
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+
+        if (gameManager != null)
         {
-            gameManager.BricksOnLevel--;//comentario linea 30
+            gameManager.BricksOnLevel--;
         }
-        if (gameManager.bigSize == false && gameManager.bigSpeed == false)
+
+        SpawnPowerUp();
+        Destroy(gameObject);
+    }
+
+    private void SpawnPowerUp()
+    {
+        int numeroRandom = Random.Range(0, 100);
+        if (numeroRandom < 40) // 40% de probabilidad
         {
-            //Numeros aleatorio
-            int numeroRandom = Random.Range(0, 100);
-            if (numeroRandom < 40)//Es como tener un 40% de probabilidad que aparesca un power up
+            GameObject newPowerUp = PowerUpPool.Instance.GetFromPool();
+            if (newPowerUp != null)
             {
-                GameObject newPowerUp = PowerUpPool.Instance.GetFromPool();//Llamaremos el metodo para activar al powerup
-                /*Si el power up existe, haremos que se cree en la misma posicion del brick*/
-                if (newPowerUp != null)
-                {
-                    newPowerUp.transform.position = transform.position;
-                }
+                newPowerUp.transform.position = transform.position;
+                newPowerUp.SetActive(true);
             }
         }
-        Destroy(gameObject);
     }
 }
