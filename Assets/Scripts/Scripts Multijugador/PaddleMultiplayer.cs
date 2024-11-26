@@ -13,7 +13,6 @@ public class PaddleMultiplayer : NetworkBehaviour
         // Solo el propietario del paddle puede controlarlo.
         if (!IsOwner)
             return;
-        float move = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         // Movimiento horizontal del paddle basado en la entrada del jugador.
         float move = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         transform.Translate(move, 0, 0);
