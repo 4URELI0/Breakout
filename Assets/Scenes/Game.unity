@@ -12682,6 +12682,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paddle
       objectReference: {fileID: 0}
+    - target: {fileID: 4943774073508265140, guid: 32c092386e2fac6428de10eeac07e8a9, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 489518346}
     - target: {fileID: 7608462856907733036, guid: 32c092386e2fac6428de10eeac07e8a9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.03
